@@ -3,215 +3,183 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>7 Wonders of the World</title>
+<title>7 Wonders | World Heritage</title>
 
 <style>
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #141e30, #243b55);
-    color: white;
+    background-color: #111;
+    color: #f5f5f5;
 }
 
+/* NAVBAR */
 nav {
-    background: rgba(0,0,0,0.6);
-    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    backdrop-filter: blur(8px);
+    padding: 20px 60px;
+    background-color: black;
+    border-bottom: 3px solid #f4c542;
 }
 
-nav h2 { margin: 0; }
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+nav h2 {
+    color: #f4c542;
     margin: 0;
-    padding: 0;
+    letter-spacing: 2px;
 }
 
-nav ul li a {
-    text-decoration: none;
+nav a {
     color: white;
-    font-size: 14px;
-    transition: 0.3s;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
 }
 
-nav ul li a:hover {
-    color: #00f7ff;
+nav a:hover {
+    color: #f4c542;
 }
 
+/* HERO */
 .hero {
+    height: 90vh;
+    background: url("images/hero.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 60px 20px;
 }
 
 .hero h1 {
-    font-size: 45px;
+    font-size: 4rem;
+    background: rgba(0,0,0,0.7);
+    padding: 30px;
+    border-left: 6px solid #f4c542;
 }
 
-.grid {
+/* INTRO */
+.intro {
+    max-width: 900px;
+    margin: 80px auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* CARDS */
+.container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 40px 80px;
 }
 
 .card {
-    background: rgba(255,255,255,0.1);
-    border-radius: 15px;
+    position: relative;
     overflow: hidden;
-    transition: transform 0.4s, box-shadow 0.4s;
+    cursor: pointer;
 }
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 350px;
     object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.card-content {
-    padding: 20px;
-    text-align: center;
+.card:hover img {
+    transform: scale(1.1);
 }
 
-.card h3 {
-    margin-bottom: 10px;
+.card-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    background: rgba(0,0,0,0.7);
+    padding: 10px 15px;
+    border-left: 4px solid #f4c542;
 }
 
-.card p {
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.card a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background: #00f7ff;
-    color: black;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.card a:hover {
-    background: white;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-}
-
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
-    background: rgba(0,0,0,0.6);
+    padding: 40px;
+    border-top: 2px solid #f4c542;
+    margin-top: 80px;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <nav>
-    <h2>🌍 7 Wonders</h2>
-    <ul>
-        <li><a href="greatwall.html">Great Wall</a></li>
-        <li><a href="petra.html">Petra</a></li>
-        <li><a href="christ.html">Christ</a></li>
-        <li><a href="machupicchu.html">Machu Picchu</a></li>
-        <li><a href="chichenitza.html">Chichen Itza</a></li>
-        <li><a href="colosseum.html">Colosseum</a></li>
-        <li><a href="tajmahal.html">Taj Mahal</a></li>
-    </ul>
+    <h2>7 WONDERS</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="greatwall.html">Great Wall</a>
+        <a href="petra.html">Petra</a>
+        <a href="christ.html">Christ</a>
+        <a href="machupicchu.html">Machu Picchu</a>
+        <a href="chichenitza.html">Chichen Itza</a>
+        <a href="colosseum.html">Colosseum</a>
+        <a href="tajmahal.html">Taj Mahal</a>
+    </div>
 </nav>
 
 <div class="hero">
     <h1>The New 7 Wonders of the World</h1>
-    <p>Explore history, engineering, and culture of humanity's greatest monuments.</p>
 </div>
 
-<div class="grid">
+<div class="intro">
+    <p>
+        In 2007, millions of people voted to recognize seven extraordinary monuments as the New Seven Wonders of the World.
+        These masterpieces reflect the brilliance, culture, engineering skill, and imagination of civilizations across history.
+    </p>
+</div>
 
-    <div class="card">
-        <img src="images/greatwall.jpg" alt="Great Wall">
-        <div class="card-content">
-            <h3>Great Wall of China</h3>
-            <p>A massive defensive wall built over 2,000 years ago.  
-            It stretches across mountains and deserts to protect ancient China.</p>
-            <a href="greatwall.html">Read More</a>
-        </div>
+<div class="container">
+
+    <div class="card" onclick="location.href='greatwall.html'">
+        <img src="images/greatwall.jpg">
+        <div class="card-title">Great Wall of China</div>
     </div>
 
-    <div class="card">
-        <img src="images/petra.jpg" alt="Petra">
-        <div class="card-content">
-            <h3>Petra</h3>
-            <p>An ancient city carved into red sandstone cliffs in Jordan.  
-            It was once a powerful trading center of the Nabataeans.</p>
-            <a href="petra.html">Read More</a>
-        </div>
+    <div class="card" onclick="location.href='petra.html'">
+        <img src="images/petra.jpg">
+        <div class="card-title">Petra</div>
     </div>
 
-    <div class="card">
-        <img src="images/christ.jpg" alt="Christ the Redeemer">
-        <div class="card-content">
-            <h3>Christ the Redeemer</h3>
-            <p>A giant statue in Rio de Janeiro overlooking the city.  
-            It symbolizes peace and welcomes visitors worldwide.</p>
-            <a href="christ.html">Read More</a>
-        </div>
+    <div class="card" onclick="location.href='christ.html'">
+        <img src="images/christ.jpg">
+        <div class="card-title">Christ the Redeemer</div>
     </div>
 
-    <div class="card">
-        <img src="images/machu.jpg" alt="Machu Picchu">
-        <div class="card-content">
-            <h3>Machu Picchu</h3>
-            <p>An ancient Incan city high in the Andes Mountains.  
-            Known for its advanced stone construction and terraces.</p>
-            <a href="machupicchu.html">Read More</a>
-        </div>
+    <div class="card" onclick="location.href='machupicchu.html'">
+        <img src="images/machu.jpg">
+        <div class="card-title">Machu Picchu</div>
     </div>
 
-    <div class="card">
-        <img src="images/chichen.jpg" alt="Chichen Itza">
-        <div class="card-content">
-            <h3>Chichen Itza</h3>
-            <p>A famous Mayan city in Mexico with a pyramid of 365 steps.  
-            It shows remarkable knowledge of astronomy.</p>
-            <a href="chichenitza.html">Read More</a>
-        </div>
+    <div class="card" onclick="location.href='chichenitza.html'">
+        <img src="images/chichen.jpg">
+        <div class="card-title">Chichen Itza</div>
     </div>
 
-    <div class="card">
-        <img src="images/colosseum.jpg" alt="Colosseum">
-        <div class="card-content">
-            <h3>Colosseum</h3>
-            <p>An ancient Roman amphitheater built in 80 AD.  
-            It hosted gladiator contests and grand public events.</p>
-            <a href="colosseum.html">Read More</a>
-        </div>
+    <div class="card" onclick="location.href='colosseum.html'">
+        <img src="images/colosseum.jpg">
+        <div class="card-title">Roman Colosseum</div>
     </div>
 
-    <div class="card">
-        <img src="images/taj.jpg" alt="Taj Mahal">
-        <div class="card-content">
-            <h3>Taj Mahal</h3>
-            <p>A beautiful white marble monument in India.  
-            Built as a symbol of love by Emperor Shah Jahan.</p>
-            <a href="tajmahal.html">Read More</a>
-        </div>
+    <div class="card" onclick="location.href='tajmahal.html'">
+        <img src="images/tajmahal.jpg">
+        <div class="card-title">Taj Mahal</div>
     </div>
 
 </div>
 
 <footer>
-    Created by Abhinav | Educational Project
+    © 2026 Abhinav | World Heritage Project
 </footer>
 
 </body>
