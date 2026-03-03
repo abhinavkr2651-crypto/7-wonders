@@ -1,43 +1,259 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Taj Mahal</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taj Mahal | 7 Wonders</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI';
-    background: linear-gradient(to right, #bdc3c7, #2c3e50);
-    color: white;
-    line-height: 1.7;
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:#0d0d0d;
+    color:#f5f5f5;
+    line-height:1.8;
 }
-.container { max-width: 1000px; margin: auto; padding: 40px; }
-.section { background: rgba(0,0,0,0.3); padding: 25px; border-radius: 15px; margin-bottom: 25px; }
-h1 { text-align: center; font-size: 42px; }
-h2 { border-bottom: 2px solid white; padding-bottom: 5px; }
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    background:rgba(0,0,0,0.8);
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid #f4c542;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:0.9rem;
+    text-transform:uppercase;
+}
+
+nav a:hover{
+    color:#f4c542;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:url("images/tajmahal.jpg") center/cover fixed no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.hero h1{
+    position:relative;
+    font-size:4rem;
+    border-left:6px solid #f4c542;
+    padding-left:20px;
+}
+
+/* CONTENT */
+.content{
+    max-width:900px;
+    margin:120px auto;
+    padding:0 20px;
+}
+
+/* SECTION TITLE */
+.section-title{
+    font-size:2rem;
+    margin-top:80px;
+    border-left:5px solid #f4c542;
+    padding-left:15px;
+}
+
+/* FADE */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* STATS */
+.stats{
+    display:flex;
+    justify-content:space-around;
+    margin-top:60px;
+    flex-wrap:wrap;
+}
+
+.stat{
+    text-align:center;
+    margin:20px;
+}
+
+.stat h2{
+    font-size:3rem;
+    color:#f4c542;
+}
+
+/* TIMELINE */
+.timeline{
+    border-left:3px solid #f4c542;
+    padding-left:20px;
+    margin-top:40px;
+}
+
+.timeline-item{
+    margin-bottom:40px;
+}
+
+/* GALLERY */
+.gallery{
+    display:flex;
+    overflow:hidden;
+    margin-top:40px;
+}
+
+.gallery img{
+    width:100%;
+    max-width:300px;
+    margin-right:15px;
+    border-radius:10px;
+}
+
+/* QUIZ */
+.quiz{
+    background:#1a1a1a;
+    padding:30px;
+    margin-top:80px;
+    border-radius:10px;
+}
+
+button{
+    background:#f4c542;
+    border:none;
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .hero h1{font-size:2rem;}
+    .stats{flex-direction:column;}
+    nav{flex-direction:column;}
+}
 </style>
 </head>
 
 <body>
-<div class="container">
+
+<nav>
+<div style="color:#f4c542;font-weight:bold;">7 WONDERS</div>
+<div><a href="index.html">Home</a></div>
+</nav>
+
+<div class="hero">
 <h1>Taj Mahal</h1>
-
-<div class="section">
-<h2>Introduction</h2>
-<p>The Taj Mahal is a white marble mausoleum located in Agra, India. It was built by Mughal Emperor Shah Jahan.</p>
-</div>
-<img src="images/taj.jpg" alt="Taj Mahal" style="width:100%; border-radius: 15px; margin-top: 20px;">
-<div class="section">
-<h2>Architecture</h2>
-<ul>
-<li>Construction began in 1632.</li>
-<li>Blend of Islamic, Persian, and Indian architecture.</li>
-<li>Perfect symmetry in design.</li>
-</ul>
 </div>
 
+<div class="content">
+
+<p class="fade">
+Standing gracefully on the banks of the Yamuna River in Agra, the Taj Mahal is one of the most breathtaking monuments ever created. Built by Mughal Emperor Shah Jahan in memory of his beloved wife Mumtaz Mahal, it represents eternal love and architectural perfection.
+</p>
+
+<div class="stats fade">
+<div class="stat">
+<h2 id="year">0</h2>
+<p>Year Construction Began</p>
 </div>
+<div class="stat">
+<h2 id="height">0</h2>
+<p>Height (meters)</p>
+</div>
+</div>
+
+<h2 class="section-title fade">History</h2>
+<p class="fade">
+Construction began in 1632 and involved thousands of artisans, architects, and craftsmen. The monument took over 20 years to complete and used white marble from Rajasthan.
+</p>
+
+<h2 class="section-title fade">Timeline</h2>
+<div class="timeline fade">
+<div class="timeline-item">
+<h4>1632</h4>
+<p>Construction begins.</p>
+</div>
+<div class="timeline-item">
+<h4>1653</h4>
+<p>Main structure completed.</p>
+</div>
+<div class="timeline-item">
+<h4>2007</h4>
+<p>Declared one of the New Seven Wonders.</p>
+</div>
+</div>
+
+<h2 class="section-title fade">Gallery</h2>
+<div class="gallery fade">
+<img src="images/taj1.jpg">
+<img src="images/taj2.jpg">
+<img src="images/taj3.jpg">
+</div>
+
+<div class="quiz fade">
+<h3>Quick Quiz</h3>
+<p>Who built the Taj Mahal?</p>
+<button onclick="alert('Correct! Emperor Shah Jahan.')">Reveal Answer</button>
+</div>
+
+</div>
+
+<script>
+/* Fade Animation */
+const faders=document.querySelectorAll('.fade');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+},{threshold:0.2});
+faders.forEach(el=>observer.observe(el));
+
+/* Counter Animation */
+function animateValue(id,start,end,duration){
+let obj=document.getElementById(id);
+let range=end-start;
+let current=start;
+let increment=end>start?1:-1;
+let stepTime=Math.abs(Math.floor(duration/range));
+let timer=setInterval(function(){
+current+=increment;
+obj.textContent=current;
+if(current==end){
+clearInterval(timer);
+}
+},stepTime);
+}
+
+animateValue("year",0,1632,2000);
+animateValue("height",0,73,2000);
+</script>
 
 </body>
 </html>
